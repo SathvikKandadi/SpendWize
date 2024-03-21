@@ -4,8 +4,8 @@ import SpendCard from './SpendCard'
 export default function Summary() {
     return (
         <div className='w-full h-full'>
-            <div className=''>
-                <div>Spending Summary</div>
+            <div className='m-2'>
+                <div className='text-blue-900 text-2xl font-bold'>Spending Summary</div>
                 <div className='flex justify-between'>
                     <div>See where your money is going exactly</div>
                     <div className='border-2 rounded p-2'><input placeholder='Select Year'></input></div>
@@ -25,7 +25,6 @@ export default function Summary() {
                     <div className='col-span-1'><SpendCard></SpendCard></div>
                     
                 </div>
-                
             </div>
         </div>
 
