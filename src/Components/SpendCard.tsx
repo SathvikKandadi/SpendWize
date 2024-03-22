@@ -1,31 +1,66 @@
 import React from 'react'
+import ExpenseBar from './ExpenseBar'
 
-export default function SpendCard() {
+type expense = {
+    category: string,
+    amount: string,
+    percentage: string,
+}
+type month = {
+    month:string,
+};
+
+const expenses: expense[] = [
+    {
+        category: "Housing",
+        amount: "-₹7,400",
+        percentage: "1/2"
+    },
+    {
+        category: "Food & drinks",
+        amount: "-₹3,400",
+        percentage: "1/3"
+    },
+    {
+        category: "Transport",
+        amount: "-₹900",
+        percentage: "2/5"
+    },
+    {
+        category: "Bills",
+        amount: "-₹913",
+        percentage: "2/3"
+    },
+    {
+        category: "Entertainment",
+        amount: "-₹1,330",
+        percentage: "1/3"
+    },
+    {
+        category: "Education",
+        amount: "-₹875",
+        percentage: "1/4"
+    },
+    {
+        category: "Shopping ",
+        amount: "-₹5,400",
+        percentage: "1/2"
+    },
+    {
+        category: "Others ",
+        amount: "-₹1,210",
+        percentage: "2/3"
+    },
+]
+export default function SpendCard({month} : month) {
     return (
-        <div>
-            <div className='border rounded-2xl p-2 shadow-lg'>
-                <div className='text-xl text-gray-500 '>JANUARY 2023</div>
-                <div className='w-full overflow-hidden'>
-                    <div className='text-lg text-blue-900 bg-gray-200 rounded p-1 w-1/2'>Housing -₹7,400</div>
-                </div>
-
-                <div className='text-lg text-blue-900 flex justify-between bg-gray-200 rounded p-1 m-2'>
-                    <div>Food & drinks</div>
-                    <div>-₹3,400</div>
-                    </div>
-                <div className='text-lg text-blue-900'>Transport -₹900</div>
-                <div className='text-lg text-blue-900'>Bills -₹913</div>
-                <div className='text-lg text-blue-900'>Entertainment -₹1,330</div>
-                <div className='text-lg text-blue-900'>Education -₹875</div>
-                <div className='text-lg text-blue-900'>Shopping -₹5,400</div>
-                <div className='text-lg text-blue-900'>Others -₹1,210</div>
-
-                <div className="h-4 w-full bg-gray-200 rounded overflow-hidden">
-                    <div className="h-full bg-green-500 w-1/2"></div>
-                </div>
-
-            </div>
+        <div className='border rounded-2xl p-2 shadow-lg'>
+            <div className='text-xl text-gray-500 '>{month}</div>
+            {
+                expenses.map((expense) => (
+                    <ExpenseBar category={expense.category} amount={expense.amount} percentage={expense.percentage} />
+                ))
+            }
         </div>
-
     )
 }
