@@ -1,5 +1,5 @@
 import React from 'react'
-import ExpenseBar from './ExpenseBar'
+import TestBar from './TestBar';
 
 
 type expense = {
@@ -53,14 +53,14 @@ const expenses: expense[] = [
         percentage: "2/3"
     },
 ]
-export default function SpendCard({ month }: month) {
+export default function TestCard({ month }: month) {
     return (
-        <div className='border rounded-2xl p-2 shadow-lg overflow-hidden w-full h-full'>
+        <div className=' rounded-2xl p-2 shadow-lg bg-zinc-950 overflow-hidden relative z-[2] w-[350px] h-[370px]'>
 
-            <div className='text-xl text-gray-500 '>{month}</div>
+            <div className='text-xl text-zinc-500 '>{month}</div>
             {
                 expenses.map((expense) => (
-                    <ExpenseBar category={expense.category} amount={expense.amount} percentage={expense.percentage} />
+                    <TestBar category={expense.category} amount={expense.amount} percentage={expense.percentage} />
                 ))
             }
         </div>
