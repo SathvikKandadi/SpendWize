@@ -8,7 +8,7 @@ import { CiMoneyCheck1 } from "react-icons/ci";
 
 export default function Header() {
     return (
-        <div className='relative z-[10] mx-8 inset-y-8 flex justify-between'>
+        <div className=' mx-8 my-8 flex justify-between'>
             <div className=' rounded-lg cursor-pointer'>
                 <div className='border border-gray-400 shadow-lg  rounded-lg m-2 flex py-2 pl-4 pr-2 gap-2 bg-gray-200'>
                     <CiSearch className='text-xl font-bold' />
