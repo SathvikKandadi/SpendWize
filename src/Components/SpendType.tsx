@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS ,  Tooltip , Legend, ArcElement } from 'chart.js';
 
 ChartJS.register(
@@ -9,37 +9,29 @@ ChartJS.register(
     Legend
 )
 
-export default function DoughnutChart() {
-    const doughnutData = {
-        labels: ["Food & Drinks" , "Shopping" , "Transport" , "Entertainment" , "Bills" , "Groceries" , "Others"],
+export default function SpendType() {
+    const pieData = {
+        labels: ["Wants" , "Needs" ],
         datasets:[
             {
-                label: "Expenses",
-                data: [3000 , 1500 , 500 , 890 , 2000 , 750 , 350],
+                data: [3000 , 1500 ],
                 backgroundColor: [
                     "red",
                     "blue",
-                    "yellow",
-                    "purple",
-                    "green",
-                    "orange",
-                    "brown"
+                   
                 ],
                 borderWidth: 2,
             },
         ],
-        data: [3000 , 1500 , 500 , 890 , 2000 , 750 , 350],
+       
         
         hoverOffset : 4,
     }
-
-    const total = doughnutData.datasets[0].data.reduce((acc, curr) => acc + curr, 0);
-
     const options = {
         plugins: {
             title: {
                 display: true,
-                text: `Total Expenses: ${total}`, 
+                text: `Spend Type`, 
                 font: {
                     size: 18
                 },
@@ -53,7 +45,10 @@ export default function DoughnutChart() {
     }
   return (
     <div className='rounded-lg w-[250px] h-[250px] mx-8 my-4 cursor-pointer bg-white shadow-lg  p-2'>
-        <Doughnut options={options} data={doughnutData}></Doughnut> 
+        <Pie options={options} data={pieData}></Pie> 
     </div>
   )
 }
+
+
+

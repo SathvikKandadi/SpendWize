@@ -2,6 +2,8 @@ import React from 'react'
 import LineGraph from './LineGraph'
 import PieChart from './PieChart'
 import DoughnutChart from './DoughnutChart'
+import SpendType from './SpendType'
+import BudgetCard from './BudgetCard'
 
 export default function Expenditure() {
     return (
@@ -11,7 +13,8 @@ export default function Expenditure() {
                     <LineGraph />
                 </div>
                 <div className='cursor-pointer ml-[50px]'>
-                    <DoughnutChart/>
+                    <BudgetCard/>
+                    {/* <DoughnutChart/> */}
                 </div>
                 {/* <div className='cursor-pointer'>
                     <PieChart/>
