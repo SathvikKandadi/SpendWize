@@ -1,11 +1,14 @@
-FROM node:20
+FROM node:20-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY package* .
 
 RUN npm install 
-RUN npm install chart.js react-chartjs-2
+
+COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
 
